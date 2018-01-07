@@ -1,0 +1,19 @@
+/** product - start */
+.card {
+  border: none;
+  margin-bottom: 25px;
+}
+
+.card-body {
+  padding: 1.25rem 1.25rem 0 1.25rem
+}
+
+.card-footer {
+  background-color: #fff;
+  border-top: none;
+}
+
+.card-title {
+  margin-bottom: 0;
+}
+/** product - end */
