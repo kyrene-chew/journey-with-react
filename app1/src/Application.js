@@ -2,25 +2,43 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Artist from './Artist';
+import SearchProduct from './SearchProduct';
 
 export default class Application extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      artist: props.artist
+      selectedArtist: props.artist
     };
   }
 
+  onArtistChange = (e) => {
+    // do not re-render if no change to state
+    if (this.state.artist !== e.target.value) {
+      this.setState({
+        selectedArtist: e.target.value
+      });
+    }
+  }
+
   render() {
-    return (
-      <Artist artist={this.state.artist} products={this.props.products} />
-    );
+    return [
+      <SearchProduct
+        onArtistChange={this.onArtistChange}
+        selectedArtist={this.state.selectedArtist}
+        key="search-product" />,
+
+      <Artist
+        selectedArtist={this.state.selectedArtist}
+        products={this.props.products}
+        key="artist" />
+    ];
   }
 }
 
 Application.defaultProps = {
-  artist: 'John Doe'
+  artist: '*'
 };
 
 Application.propTypes = {

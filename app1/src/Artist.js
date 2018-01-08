@@ -10,7 +10,7 @@ export default class Artist extends React.Component {
         <h1>Designs by artist {this.props.artist}</h1>
 
         <div className="row ">
-          <ProductList artist={this.props.artist} products={this.props.products} />
+          <ProductList selectedArtist={this.props.selectedArtist} products={this.props.products} />
         </div>
       </div>
     );
@@ -18,7 +18,7 @@ export default class Artist extends React.Component {
 }
 
 Artist.propTypes = {
-  artist: PropTypes.string.isRequired,
+  selectedArtist: PropTypes.string.isRequired,
   products: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     artist: PropTypes.string.isRequired,
