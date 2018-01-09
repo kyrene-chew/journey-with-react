@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Artist from './Artist';
-import SearchProduct from './SearchProduct';
+import Navigation from './Navigation';
 
 export default class Application extends React.Component {
   constructor(props) {
@@ -24,10 +24,9 @@ export default class Application extends React.Component {
 
   render() {
     return [
-      <SearchProduct
+      <Navigation
         onArtistChange={this.onArtistChange}
-        selectedArtist={this.state.selectedArtist}
-        key="search-product" />,
+        key="navigation" />,
 
       <Artist
         selectedArtist={this.state.selectedArtist}

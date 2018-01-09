@@ -5,11 +5,18 @@ import ProductList from './ProductList';
 
 export default class Artist extends React.Component {
   render() {
-    return (
-      <div className="product-container">
-        <h1>Designs by artist {this.props.artist}</h1>
+    let title;
+    if (this.props.selectedArtist === '*') {
+      title = 'Designs by all artists';
+    } else {
+      title = `Designs by ${this.props.selectedArtist}`;
+    }
 
-        <div className="row ">
+    return (
+      <div className="product-container container-fluid text-center">
+        <h1>{title}</h1>
+
+        <div className="row justify-content-center">
           <ProductList selectedArtist={this.props.selectedArtist} products={this.props.products} />
         </div>
       </div>
