@@ -5,16 +5,19 @@ import SearchProduct from './SearchProduct';
 
 export default class Navigation extends React.Component {
   render() {
-    return (
-      <nav className="navbar navbar-light bg-faded" >
-        <a className="navbar-brand" href="#">
+    return [
+      <nav className="navbar navbar-light bg-faded">
+        <a className="navbar-brand">
           Speakout
         </a>
-        <SearchProduct
-          onArtistChange={this.props.onArtistChange}
-          key="search-product" />
-      </nav>
-    );
+
+        <i className="fas fa-shopping-cart"></i>
+      </nav>,
+
+      <SearchProduct
+        onArtistChange={this.props.onArtistChange}
+        key="search-product" />
+    ];
   }
 }
 

@@ -14,7 +14,7 @@ export default class Artist extends React.Component {
 
     return (
       <div className="product-container container-fluid text-center">
-        <h1>{title}</h1>
+        <h3>{title}</h3>
 
         <div className="row justify-content-center">
           <ProductList selectedArtist={this.props.selectedArtist} products={this.props.products} />
